@@ -7,7 +7,7 @@ tinymce.create('tinymce.plugins.EquationEditorPlugin', {
 
       popup = editor.windowManager.open(
         {
-          url: 'equation_editor.html'
+          url: 'assets/tinymce_equation_editor/equation_editor.html'
           width: 820,
           height: 400,
           inline: 1,
@@ -42,9 +42,9 @@ tinymce.create('tinymce.plugins.EquationEditorPlugin', {
       return unless latex
 
       content = """
-        &nbsp;<span class="rendered-latex" contenteditable="false">
+        &nbsp;$$
           #{latex}
-        </span>&nbsp;
+        $$&nbsp;
       """
 
       editor.selection.select(editing) if editing
@@ -56,8 +56,8 @@ tinymce.create('tinymce.plugins.EquationEditorPlugin', {
       $(editor.getDoc()).on 'click', '.rendered-latex', (e) ->
         e.stopPropagation()
         editing = @
-        latex = $(@).find('.selectable').text().replace(/^\$/, '').replace(/\$$/, '')
-        editor.execCommand('mceMathquill', latex)
+        # latex = $(@).find('.selectable').text().replace(/^\$/, '').replace(/\$$/, '')
+        # editor.execCommand('mceMathquill', latex)
 
     editor.addButton 'equationeditor', {
       title: 'Equation editor',
