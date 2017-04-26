@@ -65,19 +65,19 @@ tinymce.create('tinymce.plugins.EquationEditorPlugin', {
       text: 'f(x)'
     }
 
-    # Use mathquill-rendered-latex when getting the contents of the document
-    editor.on 'preProcess', (ed) ->
-      mathquills = ed.target.dom.select('.rendered-latex:not(.mathquill-rendered-math)')
-      $(mathquills).mathquill()
+    # # Use mathquill-rendered-latex when getting the contents of the document
+    # editor.on 'preProcess', (ed) ->
+    #   mathquills = ed.target.dom.select('.rendered-latex:not(.mathquill-rendered-math)')
+    #   $(mathquills).mathquill()
 
-    # When loading or setting content, render the Mathquill
-    editor.on 'loadContent', (ed) ->
-      mathquills = ed.target.dom.select('span.rendered-latex:not(.mathquill-rendered-math)')
-      $(mathquills).mathquill()
+    # # When loading or setting content, render the Mathquill
+    # editor.on 'loadContent', (ed) ->
+    #   mathquills = ed.target.dom.select('span.rendered-latex:not(.mathquill-rendered-math)')
+    #   $(mathquills).mathquill()
 
-    editor.on 'setContent', (ed) ->
-      mathquills = ed.target.dom.select('span.rendered-latex:not(.mathquill-rendered-math)')
-      $(mathquills).mathquill()
+    # editor.on 'setContent', (ed) ->
+    #   mathquills = ed.target.dom.select('span.rendered-latex:not(.mathquill-rendered-math)')
+    #   $(mathquills).mathquill()
   ,
 
   getInfo : ->
