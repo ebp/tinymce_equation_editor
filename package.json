@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "author": "Foraker Labs",
   "description": "A TinyMCE plugin for editing equations using Mathquill",
+  "scripts": {
+    "watch": "gulp watch"
+  },
   "licenses": [
     {
       "type": "MIT",

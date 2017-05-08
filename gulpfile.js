@@ -48,3 +48,7 @@ gulp.task('build:zip', function() {
 });
 
 gulp.task('build', ['build:equation_editor', 'build:plugin', 'build:copy_config', 'build:zip']);
+
+gulp.task('watch', function() {
+    return gulp.watch('./src/**/*', ['build']);
+});

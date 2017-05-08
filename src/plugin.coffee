@@ -1,6 +1,7 @@
 tinymce.create('tinymce.plugins.EquationEditorPlugin', {
   init: (editor, url) ->
     editing = null
+    console.log(editor)
 
     editor.addCommand 'mceMathquill', (existing_latex) ->
       existing_latex ||= ''
