@@ -17,10 +17,12 @@
     "url": "https://github.com/foraker/tinymce_equation_editor.git"
   },
   "devDependencies": {
+    "exports-loader": "^0.6.4",
     "gulp": ">=3.8.7",
     "gulp-coffee": ">=2.1.2",
     "gulp-concat": ">=2.3.4",
     "gulp-uglify": ">=0.3.1",
-    "gulp-zip": ">=2.0.1"
+    "gulp-zip": ">=2.0.1",
+    "imports-loader": "^0.7.1"
   }
 }

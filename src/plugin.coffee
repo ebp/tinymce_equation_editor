@@ -1,14 +1,14 @@
 tinymce.create('tinymce.plugins.EquationEditorPlugin', {
   init: (editor, url) ->
     editing = null
-    console.log(editor)
 
     editor.addCommand 'mceMathquill', (existing_latex) ->
       existing_latex ||= ''
 
+      iframeUrl = editor.settings.asset_path + 'tinymce_equation_editor/equation_editor.html'
       popup = editor.windowManager.open(
         {
-          url: 'assets/tinymce_equation_editor/equation_editor.html'
+          url: iframeUrl
           width: 820,
           height: 400,
           inline: 1,
@@ -20,6 +20,7 @@ tinymce.create('tinymce.plugins.EquationEditorPlugin', {
               subtype: 'primary',
               onclick: ->
                 win = editor.windowManager.getWindows()[0]
+
                 latex = editor.windowManager.getParams()['latexInput'].mathquill('latex')
 
                 editor.execCommand 'mceMathquillInsert', latex
@@ -36,6 +37,7 @@ tinymce.create('tinymce.plugins.EquationEditorPlugin', {
         {
           plugin_url: url,
           existing_latex: existing_latex,
+          asset_path: editor.settings.asset_path
         }
       )
 
